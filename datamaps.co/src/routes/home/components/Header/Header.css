@@ -1,0 +1,14 @@
+@value purple-gradient from 'styles/colors.css';
+
+.header {
+  composes: purple-gradient;
+}
+
+.title-container {
+  height: 250px;
+}
+
+.title {
+  padding: 15px;
+  color: white;
+}

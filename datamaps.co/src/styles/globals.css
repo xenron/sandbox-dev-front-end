@@ -1,0 +1,25 @@
+@value purple-600 from 'styles/colors.css';
+
+:global(html) {
+  height: 100%;
+}
+
+:global(body) {
+  height: 100%;
+}
+
+:global(h4) {
+  margin-bottom: 0;
+}
+
+:global(p) {
+  margin-bottom: 0;
+}
+
+:global(.map-select .Select-control) {
+  height: 40px;
+}
+
+:global(.data-classification .Select-control) {
+  border-color: purple-600;
+}

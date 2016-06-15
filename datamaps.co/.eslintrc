@@ -1,0 +1,12 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "semi": 0,
+    "new-cap": [2, "capIsNewExceptions": ["Map", "List"]]
+  }
+}

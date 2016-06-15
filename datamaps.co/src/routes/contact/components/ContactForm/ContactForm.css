@@ -1,0 +1,36 @@
+.container {
+  text-align: left;
+  margin-top: 70px;
+}
+
+.element-width {
+  width: 100%;
+  max-width: 350px;
+  min-width: 200px;
+}
+
+.textarea {
+  composes: element-width;
+  height: 200px;
+}
+
+.input {
+  composes: element-width;
+  display: block;
+}
+
+.succesMsg {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #F1F8E9;
+  border: 1px solid #9CCC65;
+  color: #33691E;
+}
+
+.errors {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #FFEBEE;
+  border: 1px solid #E57373;
+  color: #B71C1C;
+}

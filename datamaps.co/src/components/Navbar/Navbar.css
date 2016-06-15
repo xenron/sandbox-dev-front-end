@@ -1,0 +1,42 @@
+@value grey-color-dark from "styles/colors.css";
+
+.nav {
+  height: 50px;
+  padding: 0 20px 0 20px;
+}
+
+.unordered-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-item {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.link {
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.grey-link {
+  composes: link;
+  color: grey-color-dark;
+}
+
+.grey-link:hover {
+  color: grey-color-dark;
+  background-color:
+}
+
+.white-link {
+  composes: link;
+  color: white;
+}
+
+.white-link:hover {
+  color: white;
+}
