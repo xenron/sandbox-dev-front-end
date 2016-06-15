@@ -1,0 +1,20 @@
+<!-- File: chapter5/log-example.html -->
+<html ng-app="notesApp">
+<body ng-controller="MainCtrl as mainCtrl">
+  <h1>Hello Services!</h1>
+  <button ng-click="mainCtrl.logStuff()">Log something</button>
+
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js">
+</script>
+<script type="text/javascript">
+  angular.module('notesApp', [])
+    .controller('MainCtrl', ['$log', function($log) {
+      var self = this;
+      self.logStuff = function() {
+        $log.log('The button was pressed');
+      };
+    }])
+</script>
+</body>
+</html>

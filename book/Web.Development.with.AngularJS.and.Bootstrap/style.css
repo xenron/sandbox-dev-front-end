@@ -1,0 +1,9 @@
+/* Styles go here */
+
+form.well.input-form {
+  margin-top: 20%;
+}
+
+td > .label {
+  margin-right: 4px;
+}

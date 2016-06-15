@@ -1,0 +1,30 @@
+<div>
+  <p>Hello {{userdata.email}}!</p>
+  <div class="form-group">
+    <label>Name Filter:</label>
+    <input class="form-control" type="text" ng-model="filter.name" bs-typeahead ng-options="name for name in names"/>
+  </div>
+  <button type="button" class="btn btn-primary pull-right" ng-click="sendEmails()">Send Emails</button>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th></th>
+        <th ng-click="orderBy('name')">Name <span ng-show="predicate == 'name'" class="glyphicon pull-right" ng-class="{'glyphicon-chevron-up': reverse, 'glyphicon-chevron-down': !reverse}"></span></th>
+        <th ng-click="orderBy('balance')">Balance <span ng-show="predicate == 'balance'" class="glyphicon pull-right" ng-class="{'glyphicon-chevron-up': !reverse, 'glyphicon-chevron-down': reverse}"></span></th>
+        <th ng-click="orderBy('dob')">Date of Birth <span ng-show="predicate == 'dob'" class="glyphicon pull-right" ng-class="{'glyphicon-chevron-up': !reverse, 'glyphicon-chevron-down': reverse}"></span></th>
+        <th ng-click="orderBy('gender')">Gender <span ng-show="predicate == 'gender'" class="glyphicon pull-right" ng-class="{'glyphicon-chevron-up': reverse, 'glyphicon-chevron-down': !reverse}"></span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="reportRow in data | filter:filter | orderBy:predicate:reverse">
+        <td><input type="checkbox" ng-model="reportRow.selected"/></td>
+        <td>{{reportRow.name}}</td>
+        <td>{{reportRow.balance | currency}}</td>
+        <td>{{reportRow.dob | date}}</td>
+        <td>{{reportRow.gender}}</td>
+        <td><span class="label margin-sm" ng-class="{'label-primary': $even, 'label-info': $odd}" ng-repeat="tag in reportRow.tags">{{tag}}</span></td>
+        <td><button type="button" class="btn btn-danger btn-sm" ng-click="deleteRow(reportRow)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

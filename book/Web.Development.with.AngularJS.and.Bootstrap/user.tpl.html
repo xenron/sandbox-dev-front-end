@@ -1,0 +1,19 @@
+<form class="well input-form" name="inputform" ng-submit="submit()">
+  <div class="alert alert-success" ng-show="postResult == 1"><b>Success!</b> You logged in correctly.</div>
+  <div class="alert alert-danger" ng-show="postResult == 2"><b>Error!</b> Wrong email and password.</div>
+  <div class="form-group has-feedback" ng-class="{'has-success': inputform.email.$dirty && inputform.email.$valid, 'has-error': inputform.email.$dirty && inputform.email.$invalid}">
+    <label class="control-label" for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" name="email" id="exampleInputEmail1" ng-model="data.email" placeholder="Enter email" bs-tooltip="'Enter your email address'" data-trigger="focus">
+    <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok': inputform.email.$dirty && inputform.email.$valid, 'glyphicon-remove': inputform.email.$dirty && inputform.email.$invalid}"></span>
+  </div>
+  <div class="form-group has-feedback" ng-class="{'has-success': inputform.password.$dirty && inputform.password.$valid, 'has-error': inputform.password.$dirty && inputform.password.$invalid}">
+    <label class="control-label" for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="password" id="exampleInputPassword1" ng-model="data.password" placeholder="Password" bs-tooltip="'Enter your password'" data-trigger="focus" required>
+    <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok': inputform.password.$dirty && inputform.password.$valid, 'glyphicon-remove': inputform.password.$dirty && inputform.password.$invalid}"></span>
+  </div>
+  <div bs-tooltip="'Please complete all fields with valid data to submit.'" style="display: inline-block;" data-placement="right" bs-enabled="inputform.$invalid || inputform.$pristine">
+    <button class="btn btn-primary" type="submit" ng-disabled="loading || inputform.$invalid || inputform.$pristine">Submit</button>
+  </div>
+  <p ng-show="loading"><span class="glyphicon glyphicon-refresh"></span> Processing...</p>
+</form>
+<p>{{data}}<br>{{inputform.email}}<br>{{inputform.password}}</p>
