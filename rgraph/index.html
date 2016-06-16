@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <!--
+        /**
+        * o------------------------------------------------------------------------------o
+        * | This file is part of the RGraph package - you can learn more at:             |
+        * |                                                                              |
+        * |                          http://www.rgraph.net                               |
+        * |                                                                              |
+        * | This package is licensed under the RGraph license. For all kinds of business |
+        * | purposes there is a small one-time licensing fee to pay and for non          |
+        * | commercial  purposes it is free to use. You can read the full license here:  |
+        * |                                                                              |
+        * |                      http://www.rgraph.net/LICENSE.txt                       |
+        * o------------------------------------------------------------------------------o
+        */
+    -->
+
+    <title>RGraph: HTML5 Javascript charts library</title>
+    <link rel="stylesheet" href="css/website.css" type="text/css" media="screen" />
+
+    <RELEASE_SCRIPT_REMOVE>
+        <!-- These get replaced by a single combined JS file -->
+        <script src="libraries/RGraph.common.effects.js" ></script>
+        <script src="libraries/RGraph.common.core.js" ></script>
+        <script src="libraries/RGraph.common.tooltips.js" ></script>
+        <script src="libraries/RGraph.line.js" ></script>
+        <script src="libraries/RGraph.pie.js" ></script>
+    </RELEASE_SCRIPT_REMOVE>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" ></script>
+    <!--[if IE 8]>
+        <script src="excanvas/excanvas.original.js"></script>
+    <![endif]-->
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="verify-v1" content="5y8rHGO/NPFDYU8jBgyT3qI7CSiEoPaeB+4x2TXan+4=" />
+    <meta name="msvalidate.01" content="4BB112FD663081BFCC94B1622BCF7222" />
+
+    <meta name="keywords" content="html5 charts canvas graph rgraph javascript line chart bar charts" />
+    <meta name="description" content="RGraph: HTML5 Javascript charts library" />
+    
+    <meta property="og:title" content="RGraph: HTML5 Javascript charts library" />
+    <meta property="og:description" content="A javascript charts library based on the HTML5 canvas tag" />
+    <meta property="og:image" content="http://www.rgraph.net/images/logo.png"/>
+    <meta property="fb:admins" content="825417645" />
+    
+    <!-- Place this tag in your head or just before your close body tag -->
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    
+    <script>
+        window.onload = function (e)
+        {
+            if (RGraph.isIE8()) {
+                CreateLineChart();
+                CreatePieChart();
+            }
+        }        
+    </script>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-54706-2']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</head>
+<body>
+
+    <!-- Social networking buttons -->
+        <div id="social_icons" class="warning" style="border-radius: 10px; top: 1px; position: fixed; width: 120px; height: 20px">
+            <!-- <a title="Bookmark with delicious" href="http://delicious.com/save?jump=close&v=4&noui&jump=close&url=http://www.rgraph.net&notes=RGraph%20is%20a%20HTML5%20based%20javascript%20charts%20library%20supporting%20a%20wide%20range%20of%20different%20chart%20types&title=RGraph:%20Javascript%20charts%20%26%20graph%20library" target="_blank"><img src="images/delicious.png" alt="Bookmark with delicious" width="22" height="22" border="0" style="position: relative; top: 1px" /></a> -->
+            <a href="http://twitter.com/home/?status=RGraph%3A%20Javascript+charts+library+http%3A%2F%2Fwww.rgraph.net+%23rgraph+%23html5+%23canvas+%23javascript+%23charts+@_rgraph" target="_blank" title="Mention RGraph on Twitter"><img src="images/twitter.png" alt="Mention RGraph on Twitter"/></a>
+            <iframe src="http://www.facebook.com/plugins/like.php?app_id=253862424642173&amp;href=http%3A%2F%2Fwww.rgraph.net&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="width: 80px; height:21px; position: relative; top: 1px"></iframe>
+        </div>
+        
+        <script>
+            // Opera fix
+            if (navigator.userAgent.indexOf('Opera') == -1) {
+              document.getElementById("social_icons").style.position = 'fixed';
+            }
+        </script>
+        
+        <div id="google_plusone">
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone href="http://www.rgraph.net"></g:plusone>
+        </div>
+    <!-- Social networking buttons -->
+
+
+    <div id="title">
+        <div id="image">
+            <br />
+            <img src="images/logo.png" align="absmiddle" alt="RGraph: HTML5 Javascript charts library" width="64" height="64" style="position: relative; top: 15px" />
+        </div>
+        
+        <div id="text">
+            <h1 id="title">RGraph: <span>HTML5 Javascript charts library</span></h1>
+            <i style="position: relative; top: -20px; left: 5px">Interactive javascript charts using the HTML5 canvas tag</i>
+        </div>
+    </div>
+
+
+
+
+    <div style="margin-left: 75px; margin-top: -15px">
+        <a href="#download">
+            <img src="images/download-stable-sml.png" width="32" height="32" alt="Download the beta version" border="0" align="absmiddle" /> 
+            <b>Download the stable version</b>
+        </a>
+
+        <a href="#download">
+            <img src="images/download-beta-sml.png" width="32" height="32" alt="Download the beta version" border="0" align="absmiddle" /> 
+            <b>Download the beta version</b> 
+        </a> 
+    </div>
+
+    <!-- END HEADER -->
+
+
+
+    <!-- TESTIMONIAL -->
+    <?php require_once('testimonial.html') ?>
+    <!-- TESTIMONIAL -->
+        
+        <canvas id="cvs" width="480" height="250" style="background-color: white; float: right">[IE8+ is required to view the charts.]</canvas>
+
+        <h2>Faster <span>websites with RGraph</span></h2>
+        <p id="intro">
+            RGraph is a HTML5 Javascript charts library. Using the new HTML5 canvas tag, RGraph charts are created in the web
+            browser, meaning quicker pages and less web server load. Using RGraph is an easy way of speeding up your website.
+
+            <div>
+                <p>
+                    RGraph produces a wide variety of chart types - examples and documentation below.
+                </p>
+            
+                <div style="text-align: center">
+                    <a href="examples/index.html" id="read-more"><b>Examples of charts</b></a> &amp;
+                    <a href="docs/index.html" id="read-more">documentation and HTML5 examples</a>
+                </div>
+            </div>
+        </p>
+
+        <script>
+            /**
+            * Create the line graph
+            */
+            function CreateLineChart ()
+            {
+                var myLine = new RGraph.Line('cvs', [4,6,12,16,8,4,2,8, 18,16,14,16], [2,4,8, 4, 2,6,6,12,8, 10,6, 8]);
+                myLine.Set('chart.labels', ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']);
+                myLine.Set('chart.gutter.left', 40);
+                myLine.Set('chart.gutter.top', 35);
+                myLine.Set('chart.gutter.right', 5);
+                myLine.Set('chart.gutter.bottom', 20);
+                myLine.Set('chart.colors', ['#f00', 'black']);
+                myLine.Set('chart.units.post', '%');
+                myLine.Set('chart.linewidth', 5);
+                myLine.Set('chart.hmargin', 10);
+                myLine.Set('chart.xticks', 12);
+                myLine.Set('chart.title', 'Robert and Daniels stats');
+                myLine.Set('chart.title.vpos', 0.5);
+                myLine.Set('chart.text.color', '#333');
+                myLine.Set('chart.text.font', 'Arial');
+                myLine.Set('chart.key', ['Robert', 'Daniel']);
+                myLine.Set('chart.key.rounded', true);
+                myLine.Set('chart.key.background', 'white');
+                myLine.Set('chart.key.position.x', myLine.Get('chart.gutter.left') + 10);
+                myLine.Set('chart.shadow', true);
+                myLine.Set('chart.shadow.blur', 15);
+                myLine.Set('chart.shadow.color', ['#faa','#aaa']);
+                myLine.Set('chart.background.grid.autofit', true);
+                myLine.Set('chart.background.grid.autofit.numvlines', 12);
+                myLine.Set('chart.tooltips', [
+                                              '<b>January</b><br />Started off the year quite averagely',
+                                              '<b>February</b><br />Better than January, rising quite nicely',
+                                              '<b>March</b><br />March was quite a spike',
+                                              '<b>April</b><br />Rising very impressively',
+                                              '<b>May</b><br />Dropping after the last two month spike',
+                                              '<b>June</b><br />Still dropping',
+                                              '<b>July</b><br />The fall is beginning to subside, but still dropping',
+                                              '<b>August</b><br />A good rise after the fall',
+                                              '<b>September</b><br />A very good peak',
+                                              '<b>October</b><br />The peak is now subsiding',
+                                              '<b>November</b><br />Still subsiding',
+                                              '<b>December</b><br />Rising again after the last fall',
+
+
+                                              '<b>January</b><br />Started off the year quite averagely as with Robert',
+                                              '<b>February</b><br />Rising as with Robert',
+                                              '<b>March</b><br />Not as good as Robert, but OK',
+                                              '<b>April</b><br />Dropping after the peak',
+                                              '<b>May</b><br />The low point as with last year',
+                                              '<b>June</b><br />Rising higher than Robert',
+                                              '<b>July</b><br />Consistent with last month',
+                                              '<b>August</b><br />A nice high point',
+                                              '<b>September</b><br />A low point',
+                                              '<b>October</b><br />A nice rise',
+                                              '<b>November</b><br />Falling for fall...',
+                                              '<b>December</b><br />Rising again for Christmas'
+                                             ]);
+
+                /**
+                * Use the Trace animation to show the chart
+                */
+                if (RGraph.isIE8()) {
+                    myLine.Draw();
+                    myLine.Set('chart.shadow.color', '#666');
+                } else {
+                    RGraph.Effects.Line.jQuery.Trace(myLine);
+                }
+            }
+        </script>
+    
+    <br clear="all" />
+
+
+    <div style="float: right; width: 335px">
+        <canvas id="cvs2" width="335" height="250" style="background-color: white">[IE8+ is required to view the charts.]</canvas>
+        <script>
+                function CreatePieChart ()
+                {
+                    /**
+                    * Draw the Pie chart
+                    */
+                    pie = new RGraph.Pie('cvs2', [45,26,23,15,11]);
+                    pie.Set('chart.strokestyle', 'white');
+                    pie.Set('chart.linewidth', 3);
+                    pie.Set('chart.shadow', true);
+                    pie.Set('chart.shadow.offsetx', 0);
+                    pie.Set('chart.shadow.offsety', 0);
+                    pie.Set('chart.shadow.blur', 15);
+                    pie.Set('chart.key', ['John','Fred','Lucy','Lou','Jenny']);
+                    pie.Set('chart.align', 'left');
+                    pie.Set('chart.tooltips', [
+                                               '<b>John</b><br />Easily the winner!',
+                                               '<b>Fred</b><br />A good second',
+                                               '<b>Lucy</b><br />A close third',
+                                               '<b>Lou</b><br />A lonely fourth',
+                                               '<b>Jenny</b><br />What can I say...?'
+                                              ]);
+                    pie.Set('chart.highlight.style', 'explode');
+                    pie.Set('chart.gutter.top', 35);
+                    pie.Set('chart.gutter.bottom', 35);
+                    pie.Set('chart.centerx', 130);
+        
+                    if (RGraph.isIE8()) { 
+                        pie.Draw();
+                    } else {
+                        //RGraph.Effects.Pie.Implode(pie);
+                        RGraph.Effects.Pie.RoundRobin(pie, {'radius': false});
+                    }
+                }
+        </script>
+    </div>
+
+
+    <h2>Supported <span>charts</span></h2>
+        <p>
+            RGraph supports over twenty different types of charts, including: Bar charts, Bi-polar charts, Donut charts,
+            Fuel gauges, Funnel charts, Gantt charts, Gauge charts Horizontal Bar charts, Horizontal Progress bars, LED grids, Line charts, Meters,
+            Odometers, Pie charts, Radar charts, Radial Scatter charts, Rose charts, Scatter charts, Thermometers,
+            Vertical Progress bars and Waterfall charts. In addition there are variants available on many charts. There is also a growing
+            range of animations and visual effects.
+        </p>
+
+
+
+    <h2>RGraph <span>customisations</span></h2>
+        <p>
+            Need something that RGraph doesn't currently support? RGraph license holders can usually be accomodated - please
+            <a href="mailto:licensing@rgraph.net"><b>contact support</b></a> to discuss it.
+        </p>
+
+    <a name="download"></a>
+    <h2>Download <span>RGraph</span></h2>
+    
+    <?php if($_SERVER['SERVER_NAME'] == 'www.rgraph.net' OR $_SERVER['SERVER_NAME'] == 'www.rgraph.org' OR isset($_GET['showdownloadlinks'])): ?>
+        <div id="downloadlinks">
+        
+            <?php ShowDownloadLinks() ?>
+
+            <p>
+                These are the latest full versions - not time-limited or branded trials. Note that the website is based on the latest
+                release, be it stable or beta. Follow <a href="http://twitter.com/_rgraph" target="_blank"><b>_RGraph</b></a> on Twitter for updates and news.
+            </p>
+        </div>
+
+    <?php else: ?>
+
+        <span style="color: red">
+            [Only available on <a href="http://www.rgraph.net#download">http://www.rgraph.net</a>]
+        </span>
+    <?php endif ?>
+
+    
+    <script>
+        /**
+        * Hide the download links if not online
+        */
+        if (location.host != 'www.rgraph.net' && location.host != 'www.rgraph.org' && location.host != 'dev.rgraph.net') {
+            var downloadlinks = document.getElementById("downloadlinks");
+            
+            if (downloadlinks) {
+                document.getElementById("downloadlinks").style.display = 'none';
+            }
+        }
+    </script>
+
+    <!--
+        <a name="license"></a>
+        <h2>The <span>RGraph license</span></h2>
+    
+        <div style="float: right; padding-left: 15px; padding-right: 40px; text-align: center">
+            <form action="https://checkout.google.com/api/checkout/v2/checkoutForm/Merchant/456239608328156" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm">
+                <input name="item_name_1" type="hidden" value="RGraph License" />
+                <input name="item_description_1" type="hidden" value="License for RGraph: HTML5 Javascript charts library" />
+                <input name="item_quantity_1" type="hidden" value="1" />
+                <input name="item_price_1" type="hidden" value="79.0" />
+                <input name="item_currency_1" type="hidden" value="GBP" />
+                <input name="_charset_" type="hidden" value="utf-8" />
+                <input alt="" width="116" height="61" src="images/buy.png" type="image" />
+            </form>
+    
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="FDVK4T4GKQ6M8">
+                <input type="image" src="images/paypal.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    
+        <p>
+            RGraph is covered by the RGraph license. A summary is that for commercial/business use there is a small one-time
+            licensing fee of 79 GBP (roughly 125 USD). For non-commercial purposes it's freely usable.
+            
+            There are some
+            <a href="docs/licensing.html"><b>licensing FAQs</b></a> that should help to answer any
+            questions you might have. If you need one, you can <a href="http://www.rgraph.net/invoice.html">get an invoice here</a>.
+        </p>
+    
+        <p>
+            If you have any questions about RGraph licensing, you can send your question to: <a href="mailto:licensing@rgraph.net">licensing@rgraph.net</a>.
+            If your question is of a support nature, please send it to: <a href="mailto:support@rgraph.net">support@rgraph.net</a>
+        </p>
+        
+        <p>
+            You can read the license on the <a href="docs/licensing.html#license.text">licensing FAQs page</a>
+        </p>
+    -->
+    
+    <!-- <iframe width="100%" height="300" src="LICENSE.txt"></iframe> -->
+
+    <script>
+        if (!RGraph.isIE8()) {
+            CreateLineChart();
+            CreatePieChart();
+        }
+    </script>
+
+
+    <br clear="all" />
+
+
+
+    <?php if ($_SERVER['SERVER_NAME'] != 'www.rgraph.net'): ?>
+        <p style="text-align: left">
+            <a href="http://www.rgraph.net" target="_blank"> &laquo; Keep up-to-date at www.rgraph.net</a>
+        </p>
+    <?php endif ?>
+    
+    <div id="rgraph"></div>
+    
+    <script>
+        if (location.host.match(/^dev\.rgraph/)) {
+            document.getElementById("rgraph").innerHTML = '<div id="devtag">DEVELOPMENT<br /><a href="http://www.rgraph.net">Go to the live version &raquo;</a></div>';
+        }
+    </script>
+
+</script>
+</body>
+</html><!-- 2011-10-27 -->

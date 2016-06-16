@@ -1,0 +1,225 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <!--
+        /**
+        * o------------------------------------------------------------------------------o
+        * | This file is part of the RGraph package - you can learn more at:             |
+        * |                                                                              |
+        * |                          http://www.rgraph.net                               |
+        * |                                                                              |
+        * | This package is licensed under the RGraph license. For all kinds of business |
+        * | purposes there is a small one-time licensing fee to pay and for non          |
+        * | commercial  purposes it is free to use. You can read the full license here:  |
+        * |                                                                              |
+        * |                      http://www.rgraph.net/LICENSE.txt                       |
+        * o------------------------------------------------------------------------------o
+        */
+    -->
+    <title>RGraph: HTML5 Javascript charts library - bar charts</title>
+    
+    <meta name="keywords" content="rgraph html5 canvas example bar charts" />
+    <meta name="description" content="RGraph: HTML5 Javascript charts library - Bar charts example" />
+    
+    <meta property="og:title" content="RGraph: HTML5 Javascript charts library" />
+    <meta property="og:description" content="A javascript charts library based on the HTML5 canvas tag" />
+    <meta property="og:image" content="http://www.rgraph.net/images/logo.png"/>
+
+    <link rel="stylesheet" href="../css/website.css" type="text/css" media="screen" />
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    
+    <!-- Place this tag in your head or just before your close body tag -->
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+    <script src="../libraries/RGraph.common.core.js" ></script>
+    <script src="../libraries/RGraph.common.effects.js" ></script>
+    <script src="../libraries/RGraph.common.tooltips.js" ></script>
+    <script src="../libraries/RGraph.bar.js" ></script>
+    <!--[if IE 8]><script src="../excanvas/excanvas.original.js"></script><![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" ></script>
+
+    <script>
+        /**
+        * The onload function creates the graph
+        */
+        window.onload = function ()
+        {
+
+            var bar1 = new RGraph.Bar('bar1', [
+                                        [0.000092, 0.00008],
+                                        [0.000034, 0.000057],
+                                        [0.000056, 0.000062],
+                                        [0.000055, 0.000045],
+                                        [0.000036, 0.000012],
+                                        [0.000044, 0.000056],
+                                        [0.000051, 0.000066],
+                                        [0.000068, 0.000088]]);
+            bar1.Set('chart.background.barcolor1', 'white');
+            bar1.Set('chart.background.barcolor2', 'white');
+            bar1.Set('chart.labels', ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th']);
+            bar1.Set('chart.key', ['John', 'Bob']);
+            bar1.Set('chart.key.position.y', 35);
+            bar1.Set('chart.key.position', 'gutter');
+            bar1.Set('chart.key.background', 'rgb(255,255,255)');
+            bar1.Set('chart.colors', ['#77f', '#7f7']);
+            bar1.Set('chart.shadow', true);
+            bar1.Set('chart.shadow.blur', 15);
+            bar1.Set('chart.shadow.offsetx', 0);
+            bar1.Set('chart.shadow.offsety', 0);
+            bar1.Set('chart.shadow.color', '#aaa');
+            bar1.Set('chart.yaxispos', 'right');
+            bar1.Set('chart.strokestyle', 'rgba(0,0,0,0)');
+            bar1.Set('chart.gutter.left', 5);
+            bar1.Set('chart.gutter.right', 55);
+            bar1.Draw();
+
+            var bar2 = new RGraph.Bar('bar2', [[30,20,19,21], [23,25, 27, 30], [30,25,29, 32], [27,28,35,33], [26,18,29,30], [31,20,25,27], [39,28,28,35], [27,29,28,29], [26,23,26,27], [30,20,19,21], [30,20,19,21], [30,20,19,21]]);
+            bar2.Set('chart.units.pre', '$');
+            bar2.Set('chart.title', 'Sales in the last 8 months (tooltips)');
+            bar2.Set('chart.title.vpos', 0.5);
+            bar2.Set('chart.colors', ['red', 'yellow', 'green', 'orange']);
+            bar2.Set('chart.gutter.left', 40);
+            bar2.Set('chart.gutter.right', 5);
+            bar2.Set('chart.gutter.top', 40);
+            bar2.Set('chart.gutter.bottom', 50);
+            bar2.Set('chart.shadow', true);
+            bar2.Set('chart.shadow.color', '#aaa');
+            bar2.Set('chart.background.barcolor1', 'white');
+            bar2.Set('chart.background.barcolor2', 'white');
+            bar2.Set('chart.background.grid.hsize', 5);
+            bar2.Set('chart.background.grid.vsize', 5);
+            bar2.Set('chart.grouping', 'stacked');
+            bar2.Set('chart.labels', ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October','November','December']);
+            bar2.Set('chart.labels.above', true);
+            bar2.Set('chart.key', ['Richard', 'Barbara', 'Johnny', 'Frederick']);
+            bar2.Set('chart.key.background', 'rgba(255,255,255,0.7)');
+            bar2.Set('chart.key.position', 'gutter');
+            bar2.Set('chart.key.position.gutter.boxed', false);
+            bar2.Set('chart.key.position.y', bar2.Get('chart.gutter.top') - 15);
+            bar2.Set('chart.key.border', false);
+            bar2.Set('chart.background.grid.width', 0.3); // Decimals are permitted
+            bar2.Set('chart.text.angle', 35);
+            bar2.Set('chart.strokestyle', 'rgba(0,0,0,0)');
+            bar2.Set('chart.tooltips.event', 'onmousemove');
+            
+            if (!RGraph.isIE8()) {
+                tooltipFunc = function (i)
+                {
+                    var r = i % 4;
+                    
+                    if (r == 3) return 'John'
+                    else if (r == 2) return 'Rich';
+                    else if (r == 1) return 'Jane';
+                    else if (r == 0) return 'Quentin';
+                }
+                bar2.Set('chart.tooltips', tooltipFunc);
+            }
+            bar2.Draw();
+
+            
+            bar3 = new RGraph.Bar('bar3', [4,3,2,6,5,14]);
+            bar3.Set('chart.labels', ['Lou','Pete','Bertie','Barry','Bob','Fred']);
+            bar3.Set('chart.tooltips', function (idx){ return '<b>' + bar3.Get('chart.labels')[idx] + '</b>';});
+            bar3.Set('chart.colors', ['red','yellow','blue','pink','cyan','#ddd']);
+            bar3.Set('chart.colors.sequential', true);
+            bar3.Draw();
+            
+            bar4 = new RGraph.Bar('bar4', [45,43,42,65,53,54,58]);
+            bar4.Set('chart.labels', ['Lou','Pete','Bertie','Barry','Bob','Fred','Louise']);
+            bar4.Set('chart.colors', ['red']);
+            bar4.Set('chart.yaxispos', 'right');
+
+            if (!RGraph.isIE8()) {
+                RGraph.Effects.Fade.In(bar4);
+                RGraph.Effects.jQuery.Reveal(bar4);
+            } else {
+                bar4.Draw();
+            }
+        }
+    </script>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-54706-2']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</head>
+<body>
+    <!-- Social networking buttons -->
+        <div id="social_icons" class="warning" style="border-radius: 10px; top: 1px; position: fixed; width: 120px; height: 20px">
+            <!-- <a title="Bookmark with delicious" href="http://delicious.com/save?jump=close&v=4&noui&jump=close&url=http://www.rgraph.net&notes=RGraph%20is%20a%20HTML5%20based%20javascript%20charts%20library%20supporting%20a%20wide%20range%20of%20different%20chart%20types&title=RGraph:%20Javascript%20charts%20%26%20graph%20library" target="_blank"><img src="../images/delicious.png" alt="Bookmark with delicious" width="22" height="22" border="0" style="position: relative; top: 1px" /></a> -->
+            <a href="http://twitter.com/home/?status=RGraph%3A%20Javascript+charts+library+http%3A%2F%2Fwww.rgraph.net+%23rgraph+%23html5+%23canvas+%23javascript+%23charts+@_rgraph" target="_blank" title="Mention RGraph on Twitter"><img src="../images/twitter.png" alt="Mention RGraph on Twitter"/></a>
+            <iframe src="http://www.facebook.com/plugins/like.php?app_id=253862424642173&amp;href=http%3A%2F%2Fwww.rgraph.net&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="width: 80px; height:21px; position: relative; top: 1px"></iframe>
+        </div>
+        
+        <script>
+            // Opera fix
+            if (navigator.userAgent.indexOf('Opera') == -1) {
+              document.getElementById("social_icons").style.position = 'fixed';
+            }
+        </script>
+        
+        <div id="google_plusone">
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone href="http://www.rgraph.net"></g:plusone>
+        </div>
+    <!-- Social networking buttons -->
+
+    <div id="breadcrumb">
+        <a href="../index.html">RGraph: HTML5 Javascript charts library</a>
+        >
+        <a href="./index.html">Examples</a>
+        >
+        Bar charts
+    </div>
+
+    <h1>RGraph: <span>HTML5 Javascript charts library</span> - Bar charts</h1>
+
+    <script>
+        if (RGraph.isIE8()) {
+            document.write('<div style="background-color: #fee; border: 2px dashed red; padding: 5px"><b>Important</b><br /><br /> Internet Explorer 8 does not natively support the HTML5 canvas tag, so if you want to see the charts, you can either:<ul><li>Install <a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a></li><li>Use ExCanvas. This is provided in the RGraph Archive.</li><li>Use another browser entirely. Your choices are Firefox 3.5+, Chrome 2+, Safari 4+ or Opera 10.5+. </li></ul> <b>Note:</b> Internet Explorer 9 fully supports the canvas tag.</div>');
+        }
+    </script>
+
+    <div>
+        <p>
+            The bar chart is probably one of the most widely used of charts, and also one of the most versatile. It's defined as a chart with
+            rectangular bars with lengths proportional to the values they represent. The bar chart can be used to represent two
+            or more values. With grouped and stacked bar charts, you can visualise two or more sets of data. For example two years
+            worth of sales figures. Doing this you will be able to easily see differences, for example a better year when it comes
+            to sales. You can also show negative values by having the X axis in the center, like the examples shown. If you use a
+            grouped or stacked bar chart, a key may be helpful to your users.
+        </p>
+        
+        <p>
+            By using the tooltips feature, you can provide more detail about what a particular bar represents. The tooltips in
+            <b>RGraph</b> can contain wide range of HTML, so you can use them to show photos or movies for example.
+        </p>
+    
+        <div>
+            <ul>
+                <li><a href="../docs/bar.html">Bar chart API documentation</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <canvas id="bar1" width="450" height="200">[No canvas support]</canvas>
+            <canvas id="bar2" width="450" height="200">[No canvas support]</canvas>
+        </div>
+
+        <div>
+            <canvas id="bar3" width="450" height="200">[No canvas support]</canvas>
+            <canvas id="bar4" width="450" height="200">[No canvas support]</canvas>
+        </div>
+    </div>
+
+</body>
+</html>

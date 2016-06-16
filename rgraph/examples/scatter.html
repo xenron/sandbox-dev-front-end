@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <!--
+        /**
+        * o------------------------------------------------------------------------------o
+        * | This file is part of the RGraph package - you can learn more at:             |
+        * |                                                                              |
+        * |                          http://www.rgraph.net                               |
+        * |                                                                              |
+        * | This package is licensed under the RGraph license. For all kinds of business |
+        * | purposes there is a small one-time licensing fee to pay and for non          |
+        * | commercial  purposes it is free to use. You can read the full license here:  |
+        * |                                                                              |
+        * |                      http://www.rgraph.net/LICENSE.txt                       |
+        * o------------------------------------------------------------------------------o
+        */
+    -->
+
+    <title>RGraph: HTML5 Javascript charts library - scatter charts</title>
+    
+    <meta name="keywords" content="rgraph html5 canvas example scatter chart" />
+    <meta name="description" content="RGraph: HTML5 Javascript charts library - Scatter charts example" />
+    
+    <meta property="og:title" content="RGraph: HTML5 Javascript charts library" />
+    <meta property="og:description" content="A charts library based on the HTML5 canvas tag" />
+    <meta property="og:image" content="http://www.rgraph.net/images/logo.png"/>
+
+    <link rel="stylesheet" href="../css/website.css" type="text/css" media="screen" />
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    
+    <!-- Place this tag in your head or just before your close body tag -->
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+    <script src="../libraries/RGraph.common.core.js" ></script>
+    <script src="../libraries/RGraph.common.tooltips.js" ></script>
+    <script src="../libraries/RGraph.scatter.js" ></script>
+    <!--[if IE 8]><script src="../excanvas/excanvas.original.js"></script><![endif]-->
+
+    <script>
+        window.onload = function ()
+        {
+
+            var data = [
+                     [10,15,'red'],[13,16,'red'],[12,11,'red'],[15,16,'red'],[20,19,'red'],[19,16,'red'],[13,15,'red'],[11,12,'red'],[13,16,'red'],[5,19,'red'],[16,15,'red'],[13,15,'red'],[14,14,'red'],[12,12,'red'],
+                     [5,4,'green'],[6,14,'green'],[19,12,'green'],[3,5,'green'],[1,16,'green'],[13,5,'green'],[15,15,'green'],[13,5,'green'],[4,9,'green'],[16,6,'green'],[13,18,'green'],[18,12,'green'],[19,18,'green'],[13,16,'green'],[15,14,'green'],
+                     [12,4,'blue'],[4,23,'blue'],[13,8,'blue'],[12,12,'blue'],[18,4,'blue'],[4,18,'blue'],[11,2,'blue'],[4,3,'blue'],[5,8,'blue'],[1,9,'blue'],[4,6,'blue'],[16,8,'blue'],[17,8,'blue'],[19,9,'blue'],[13,5,'blue'],[16,21,'blue'],
+                     [12,4],[13,12],[11,16],[4,19],[4,3],[5,6],[1,9],[4,12],[6,12],[8,8],[16,6],[13,5],[15,13],[23,23,'red'], [1,1, 'gray'],
+                     [1,4,'gray'], [2,3,'gray'], [1,6,'gray'], [2,3,'gray'], [2,5,'gray'], [3,7,'gray'], [1,4,'gray'], [2,7,'gray']
+                    ];
+
+            var scatter1 = new RGraph.Scatter('scatter1', data);
+            scatter1.Set('chart.ylabels.count', 10);
+            scatter1.Set('chart.background.hbars', [[0,null,'rgba(0,255,0,0.3)']]);
+            scatter1.Set('chart.background.grid.autofit.numhlines', 10);
+            scatter1.Set('chart.background.grid.autofit.numvlines', 28);
+            scatter1.Set('chart.labels', [['Week 1', 0], ['Week 2', 7], ['Week 3', 14], ['Week 4', 21]]);
+            scatter1.Set('chart.labels.specific.align', 'center');
+            scatter1.Set('chart.xmax', 28); // Necessary
+            scatter1.Set('chart.defaultcolor', 'black'); // Optional
+            scatter1.Set('chart.title', 'This months sales');
+            scatter1.Set('chart.gutter.left', 40);
+            scatter1.Set('chart.tickmarks', 'square');
+            scatter1.Set('chart.ticksize', 4);
+            scatter1.Set('chart.ymax', 30);
+            scatter1.Set('chart.units.pre', '$');
+            scatter1.Set('chart.line.colors', ['red','blue','black']);
+            scatter1.Set('chart.key', ['Bob','Fred','Gaz']);
+            scatter1.Draw();
+
+            
+            
+            var scatter2 = new RGraph.Scatter('scatter2', [[10,[21,22,26,31,35, 'red', 'green',35], 'red', 'A tooltip'],[250,45, 'red', 'A fourth tooltip']],
+                                                          [[50,[5,22,26,31,35, '#000', '#000'], '#000', 'A second tooltip'],[150,45, 'blue', 'A third tooltip']] // Dataset 2
+                                                         );
+            scatter2.Set('chart.title', 'A Scatter chart boxplot');
+            scatter2.Set('chart.boxplot.capped', false);
+            scatter2.Set('chart.labels', ['Q1', 'Q2', 'Q3', 'Q4']);
+            scatter2.Set('chart.xmax', 365);
+            scatter2.Set('chart.ymax', 50);
+            scatter2.Set('chart.boxplot.width', 12); // The default width
+            //scatter2.Set('chart.background.vbars', [[182.5, 91.125, 'rgba(0,255,0,0.5)']]);
+scatter2.Set('chart.ylabels.inside', true);
+scatter2.Set('chart.yaxispos', 'left');
+            scatter2.Draw();
+        }
+    </script>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-54706-2']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</head>
+<body>
+
+    
+    <!-- Social networking buttons -->
+        <div id="social_icons" class="warning" style="border-radius: 10px; top: 1px; position: fixed; width: 120px; height: 20px">
+            <!-- <a title="Bookmark with delicious" href="http://delicious.com/save?jump=close&v=4&noui&jump=close&url=http://www.rgraph.net&notes=RGraph%20is%20a%20HTML5%20based%20javascript%20charts%20library%20supporting%20a%20wide%20range%20of%20different%20chart%20types&title=RGraph:%20Javascript%20charts%20%26%20graph%20library" target="_blank"><img src="../images/delicious.png" alt="Bookmark with delicious" width="22" height="22" border="0" style="position: relative; top: 1px" /></a> -->
+            <a href="http://twitter.com/home/?status=RGraph%3A%20Javascript+charts+library+http%3A%2F%2Fwww.rgraph.net+%23rgraph+%23html5+%23canvas+%23javascript+%23charts+@_rgraph" target="_blank" title="Mention RGraph on Twitter"><img src="../images/twitter.png" alt="Mention RGraph on Twitter"/></a>
+            <iframe src="http://www.facebook.com/plugins/like.php?app_id=253862424642173&amp;href=http%3A%2F%2Fwww.rgraph.net&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="width: 80px; height:21px; position: relative; top: 1px"></iframe>
+        </div>
+        
+        <script>
+            // Opera fix
+            if (navigator.userAgent.indexOf('Opera') == -1) {
+              document.getElementById("social_icons").style.position = 'fixed';
+            }
+        </script>
+        
+        <div id="google_plusone">
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone href="http://www.rgraph.net"></g:plusone>
+        </div>
+    <!-- Social networking buttons -->
+
+
+<div id="breadcrumb">
+    <a href="../index.html">RGraph: HTML5 Javascript charts library</a>
+    >
+    <a href="./index.html">Examples</a>
+    >
+    Scatter charts
+</div>
+
+<h1>RGraph: <span>HTML5 Javascript charts library</span> - Scatter charts</h1>
+
+    <script>
+        if (RGraph.isIE8()) {
+            document.write('<div style="background-color: #fee; border: 2px dashed red; padding: 5px"><b>Important</b><br /><br /> Internet Explorer 8 does not natively support the HTML5 canvas tag, so if you want to see the charts, you can either:<ul><li>Install <a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a></li><li>Use ExCanvas. This is provided in the RGraph Archive.</li><li>Use another browser entirely. Your choices are Firefox 3.5+, Chrome 2+, Safari 4+ or Opera 10.5+. </li></ul> <b>Note:</b> Internet Explorer 9 fully supports the canvas tag.</div>');
+        }
+    </script>
+    
+    <p>
+        Scatter charts use two variables to plot points and makes it clear where there are congregations. The data points
+        make up the X and Y coordinates. The labels on the X axis are separate from the X units, allowing you to "group" them. For
+        example, like the example, you could set the maxium X value to be 365, but only have four labels. That way you would
+        have a granularity of a day, but the X axis would only have four labels. Like the example.
+    </p>
+
+    <div>
+        <ul>
+            <li><a href="../docs/scatter.html">Scatter charts API documentation</a></li>
+        </ul>
+    </div>
+
+    <canvas id="scatter1" width="450" height="200">[No canvas support]</canvas>
+    <canvas id="scatter2" width="450" height="200">[No canvas support]</canvas>
+
+    
+    
+</body>
+</html>

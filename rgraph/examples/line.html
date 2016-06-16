@@ -1,0 +1,208 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <!--
+        /**
+        * o------------------------------------------------------------------------------o
+        * | This file is part of the RGraph package - you can learn more at:             |
+        * |                                                                              |
+        * |                          http://www.rgraph.net                               |
+        * |                                                                              |
+        * | This package is licensed under the RGraph license. For all kinds of business |
+        * | purposes there is a small one-time licensing fee to pay and for non          |
+        * | commercial  purposes it is free to use. You can read the full license here:  |
+        * |                                                                              |
+        * |                      http://www.rgraph.net/LICENSE.txt                       |
+        * o------------------------------------------------------------------------------o
+        */
+    -->
+    <title>RGraph: HTML5 Javascript charts library - line charts</title>
+    
+    <meta name="keywords" content="rgraph html5 canvas example line chart" />
+    <meta name="description" content="RGraph: HTML5 Javascript charts library - Line chart example" />
+    
+    <meta property="og:title" content="RGraph: HTML5 Javascript charts library" />
+    <meta property="og:description" content="A charts library based on the HTML5 canvas tag" />
+    <meta property="og:image" content="http://www.rgraph.net/images/logo.png"/>
+
+    <link rel="stylesheet" href="../css/website.css" type="text/css" media="screen" />
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    
+    <!-- Place this tag in your head or just before your close body tag -->
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+    <script src="../libraries/RGraph.common.core.js" ></script>
+    <script src="../libraries/RGraph.common.context.js" ></script>
+    <script src="../libraries/RGraph.common.annotate.js" ></script>
+    <script src="../libraries/RGraph.common.tooltips.js" ></script>
+    <script src="../libraries/RGraph.common.zoom.js" ></script>
+    <script src="../libraries/RGraph.common.effects.js" ></script>
+    <script src="../libraries/RGraph.line.js" ></script>
+    <!--[if IE 8]><script src="../excanvas/excanvas.original.js"></script><![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" ></script>
+
+    <script>
+        window.onload = function ()
+        {
+            var line1 = new RGraph.Line('line1', [56,45,43,52,56,65,21,23,34,15,21,-12,-13,-31,-25], [35,43,41,41,42,46,42,39,46,41,45,65,54,54,41,41]);
+            line1.Set('chart.background.grid', true);
+            line1.Set('chart.linewidth', 5);
+            line1.Set('chart.gutter.left', 35);
+            line1.Set('chart.hmargin', 5);
+            if (RGraph.isIE9up()) {
+                line1.Set('chart.shadow', true);
+            }
+            line1.Set('chart.tickmarks', null);
+            line1.Set('chart.units.post', 'k');
+            line1.Set('chart.xticks', 8);
+            line1.Set('chart.colors', ['red', 'green']);
+            line1.Set('chart.key', ['Sales (not good)','Costs (reasonably consistent)']);
+            line1.Set('chart.key.shadow', true);
+            line1.Set('chart.key.shadow.offsetx', 0);
+            line1.Set('chart.key.shadow.offsety', 0);
+            line1.Set('chart.key.shadow.blur', 15);
+            line1.Set('chart.key.shadow.color', '#ddd');
+            line1.Set('chart.key.rounded', true);
+            line1.Set('chart.key.position', 'graph');
+            line1.Set('chart.key.position.x', line1.Get('chart.gutter.left') + 4);
+            line1.Set('chart.key.position.y', (line1.canvas.height / 2) + 5);
+            line1.Set('chart.xaxispos', 'center');
+            line1.Set('chart.background.grid.autofit', true);
+            line1.Set('chart.background.grid.autofit.numhlines', 10);
+            line1.Set('chart.title', 'Sales last year');
+            line1.Set('chart.curvy', true);
+            line1.Set('chart.curvy.factor', 0.25);
+            line1.Set('chart.animation.unfold.x',false);
+            line1.Set('chart.animation.unfold.y',true);
+            line1.Set('chart.animation.unfold.initial',0);
+            RGraph.Effects.Line.Unfold(line1);
+            
+            var line2 = new RGraph.Line('line2', [6,5,4,5,6,4,1,2,3], [7,8,9,9,8,7,8,7,6]);
+            line2.Set('chart.labels', ['13th','14th','15th','16th','15th','16th','17th','18th','19th']);
+            line2.Set('chart.title', 'Range of fuel consumption');
+            line2.Set('chart.title.vpos', 0.5);
+            line2.Set('chart.background.grid.autofit.align', true);
+            line2.Set('chart.filled', true);
+            line2.Set('chart.filled.range', true);
+            line2.Set('chart.fillstyle', 'rgba(128,255,128,0.5)');
+            line2.Set('chart.linewidth', 2);
+            line2.Set('chart.colors', ['green']);
+            line2.Set('chart.hmargin', 5);
+            line2.Set('chart.gutter.left', 50);
+            //line2.Draw();
+            RGraph.Effects.Line.jQuery.Trace(line2);
+            
+            line3 = new RGraph.Line('line3', [12,23,25,26,28,48,45,46,70], [31,20,48,46,41,52,54,58,34]);
+            line3.Set('chart.linewidth', 3);
+            line3.Set('chart.filled', true);
+            //line3.Set('chart.filled.accumulative', false);
+            line3.Set('chart.fillstyle', ['rgba(255,0,0,0.5)', 'rgba(255,255,0,0.5)']);
+            line3.Set('chart.colors', ['black','black']);
+            line3.Set('chart.units.post', '%');
+            line3.Set('chart.gutter.left', 55);
+            line3.Set('chart.gutter.right', 15);
+            line3.Set('chart.labels', ['Hoolio', 'Gary', 'Fliss', 'Nevil', 'Jobe', 'Pete', 'Lou', 'John', 'Fred']);
+            line3.Set('chart.key', ['Year 1 (1999)', 'Year 2 (2009)']);
+            line3.Set('chart.key.colors', line3.Get('chart.fillstyle'));
+            line3.Set('chart.key.position', 'gutter');
+            line3.Set('chart.key.position.gutter.boxed', false);
+            RGraph.Effects.Line.jQuery.Trace(line3);
+            
+            line4 = new RGraph.Line('line4', [6,3,5,8,9,5,7,4,8,6,2]);
+            line4.Set('chart.yaxispos', 'right');
+            line4.Set('chart.hmargin', 15);
+            line4.Set('chart.tickmarks', 'endcircle');
+            line4.Set('chart.labels', ['Alex','Gary','Hoolio','Benny','Olga','Rachel','June','Shappy','Lou','Pete','Kevin']);
+            line4.Set('chart.linewidth', 3);
+            line4.Set('chart.shadow', true);
+            line4.Set('chart.text.angle', 45);
+            line4.Set('chart.gutter.top', 5);
+            line4.Set('chart.gutter.bottom', 45);
+            line4.Draw();
+        }
+    </script>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-54706-2']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+</head>
+<body>
+
+    
+    <!-- Social networking buttons -->
+        <div id="social_icons" class="warning" style="border-radius: 10px; top: 1px; position: fixed; width: 120px; height: 20px">
+            <!-- <a title="Bookmark with delicious" href="http://delicious.com/save?jump=close&v=4&noui&jump=close&url=http://www.rgraph.net&notes=RGraph%20is%20a%20HTML5%20based%20javascript%20charts%20library%20supporting%20a%20wide%20range%20of%20different%20chart%20types&title=RGraph:%20Javascript%20charts%20%26%20graph%20library" target="_blank"><img src="../images/delicious.png" alt="Bookmark with delicious" width="22" height="22" border="0" style="position: relative; top: 1px" /></a> -->
+            <a href="http://twitter.com/home/?status=RGraph%3A%20Javascript+charts+library+http%3A%2F%2Fwww.rgraph.net+%23rgraph+%23html5+%23canvas+%23javascript+%23charts+@_rgraph" target="_blank" title="Mention RGraph on Twitter"><img src="../images/twitter.png" alt="Mention RGraph on Twitter"/></a>
+            <iframe src="http://www.facebook.com/plugins/like.php?app_id=253862424642173&amp;href=http%3A%2F%2Fwww.rgraph.net&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="width: 80px; height:21px; position: relative; top: 1px"></iframe>
+        </div>
+        
+        <script>
+            // Opera fix
+            if (navigator.userAgent.indexOf('Opera') == -1) {
+              document.getElementById("social_icons").style.position = 'fixed';
+            }
+        </script>
+        
+        <div id="google_plusone">
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone href="http://www.rgraph.net"></g:plusone>
+        </div>
+    <!-- Social networking buttons -->
+
+
+<div id="breadcrumb">
+    <a href="../index.html">RGraph: HTML5 Javascript charts library</a>
+    >
+    <a href="./index.html">Examples</a>
+    >
+    Line chart
+</div>
+
+<h1>RGraph: <span>HTML5 Javascript charts library</span> - Line charts</h1>
+
+    <script>
+        if (RGraph.isIE8()) {
+            document.write('<div style="background-color: #fee; border: 2px dashed red; padding: 5px"><b>Important</b><br /><br /> Internet Explorer 8 does not natively support the HTML5 canvas tag, so if you want to see the charts, you can either:<ul><li>Install <a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a></li><li>Use ExCanvas. This is provided in the RGraph Archive.</li><li>Use another browser entirely. Your choices are Firefox 3.5+, Chrome 2+, Safari 4+ or Opera 10.5+. </li></ul> <b>Note:</b> Internet Explorer 9 fully supports the canvas tag.</div>');
+        }
+    </script>
+    
+    <div>
+        <p>
+            Like Bar charts, Line charts are some of the most versatile chart types. It is similar, but can indicate chronological
+            data better. Line charts are good if, for example, you want to illustrate sales figures over a year (or any period of
+            time). You'll then be able to easily see whether sales are going up, down or are stagnant. It will also become apparent
+            which months are busier than others. By using a multiple line chart you can add multiple sets of data (eg two or more years
+            of figures) to your chart. You can customise the line chart by stipulating it as being filled, having drop shadows, keys,
+            having the X axis in the centre, different colors, different tickmark styles and tooltips etc.
+        </p>
+    
+        <div>
+            <ul>
+                <li><a href="../docs/line.html">Line charts API documentation</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <canvas id="line1" width="475" height="250">[Please wait...]</canvas>
+            <canvas id="line2" width="475" height="250">[Please wait...]</canvas>
+        </div>
+
+        <div>
+            <canvas id="line3" width="475" height="250">[Please wait...]</canvas>
+            <canvas id="line4" width="475" height="250">[Please wait...]</canvas>
+        </div>
+    </div>
+
+</body>
+</html>

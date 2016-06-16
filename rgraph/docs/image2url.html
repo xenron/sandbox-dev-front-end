@@ -1,0 +1,142 @@
+<html>
+<head>
+    <title>Image to data: url converter</title>
+    
+    <style>
+        body {
+            font-size: 12pt;
+            font-family: Georgia;
+        }
+    </style>
+</head>
+<body onload="document.getElementById('url').focus(); document.getElementById('url').value = '/images/logo.png'">
+
+    <div style="position: fixed; right: 5px; background-color: #eee; border: 2px solid #000; padding: 3px">
+        <a href="http://www.rgraph.net" target="_blank"><i>Courtesy of www.rgraph.net</i></a>
+    </div>
+
+    <h1>Image to data: url converter</h1>
+    
+    <i>
+        This only works for online images, which are on the [<script>document.write(location.host)</script>] domain. There's no server-side
+        scripting though, so feel free to put it on your website and use it there.
+    </i>
+    #
+    <h2>Why use data: URLs?</h2>
+    
+    <p>
+        By using data: URLs you reduce the number of HTTP requests needed to display your page since the images are part of the
+        page itself. This does mean though that the images can't be cached (unless of course the page itself is cached). But, if you were
+        to reuse the same image on subsequent pages, they wouldn't be cached. You can get around this though by using some
+        Javascript at the bottom of your page to change the URLs to the real image files. The
+        <a href="http://www.rgraph.net" target="_blank">www.rgraph.net</a> front page uses this technique.
+    </p>
+    
+    <p />
+    
+    URL: <input type="text" value="" id="url" />
+    <button onclick="Go()">Go!</button>
+    
+    <p />
+
+    The data: url:
+    <textarea id="output" readonly style="width: 100%" rows="20" style="color: gray" onclick="this.select()">This is where the output URL goes...</textarea>
+
+    <p />
+    
+    A full image tag with the url as the src:
+    <textarea id="output_tag" readonly style="width: 100%" rows="20" style="color: gray" onclick="this.select()">This is where the image tag  goes...</textarea>
+
+    <p>The image itself using the data: url:</p>
+    <script>
+        function Go()
+        {
+            var url      = document.getElementById("url").value;
+            var text     = document.getElementById("output");
+            var text_tag = document.getElementById("output_tag");
+            var img      = document.createElement('IMG');
+
+            img.src = url;
+            document.body.appendChild(img);
+
+            /*******************************************************
+            * Create the canvas and paint the image onto it
+            *******************************************************/
+            canvas = CreateCanvas(img);
+            
+            /*******************************************************
+            * Now use the .toDataURL() function to get the data: url
+            *******************************************************/
+            var data = canvas.toDataURL();
+            
+            /*******************************************************
+            * Populate the first text box
+            *******************************************************/
+            text.value = data;
+            text.select();
+            
+            /*******************************************************
+            * Populate the second text box
+            *******************************************************/
+            text_tag.value = '<img src="' + data + '" width="' + img.offsetWidth + '" height="' + img.offsetHeight + '" alt="An image" />'
+            
+            /*******************************************************
+            * Add the image tag just created to the DOM
+            *******************************************************/
+            img.src = data;
+            img.width = img.offsetWidth;
+            img.height = img.offsetHeight;
+        }
+        
+        /*******************************************************
+        * This function creates the canvas and appends it to the
+        * DOM
+        * 
+        * @param img The image DOM object
+        *******************************************************/
+        function CreateCanvas(img)
+        {
+            var canvas    = document.createElement('CANVAS');
+            var context   = canvas.getContext('2d');
+
+            canvas.width  = img.offsetWidth;
+            canvas.height = img.offsetHeight;
+            document.body.appendChild(canvas);
+
+            /*******************************************************
+            * Now add the image to the canvas
+            *******************************************************/
+            context.drawImage(img, 0, 0);
+            
+            /*******************************************************
+            * Move the canvas off-screen
+            *******************************************************/
+            
+            canvas.style.position = 'absolute';
+            canvas.style.left = (-1 * img.offsetWidth) + 'px';
+            canvas.style.top  = (-1 * img.offsetHeight) + 'px';
+            
+            return canvas;
+        }
+    </script>
+
+</body>
+</html><!-- Social networking buttons -->
+        <div id="social_icons" class="warning" style="border-radius: 10px; top: 1px; position: fixed; width: 120px; height: 20px">
+            <!-- <a title="Bookmark with delicious" href="http://delicious.com/save?jump=close&v=4&noui&jump=close&url=http://www.rgraph.net&notes=RGraph%20is%20a%20HTML5%20based%20javascript%20charts%20library%20supporting%20a%20wide%20range%20of%20different%20chart%20types&title=RGraph:%20Javascript%20charts%20%26%20graph%20library" target="_blank"><img src="../images/delicious.png" alt="Bookmark with delicious" width="22" height="22" border="0" style="position: relative; top: 1px" /></a> -->
+            <a href="http://twitter.com/home/?status=RGraph%3A%20Javascript+charts+library+http%3A%2F%2Fwww.rgraph.net+%23rgraph+%23html5+%23canvas+%23javascript+%23charts+@_rgraph" target="_blank" title="Mention RGraph on Twitter"><img src="../images/twitter.png" alt="Mention RGraph on Twitter"/></a>
+            <iframe src="http://www.facebook.com/plugins/like.php?app_id=253862424642173&amp;href=http%3A%2F%2Fwww.rgraph.net&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="width: 80px; height:21px; position: relative; top: 1px"></iframe>
+        </div>
+        
+        <script>
+            // Opera fix
+            if (navigator.userAgent.indexOf('Opera') == -1) {
+              document.getElementById("social_icons").style.position = 'fixed';
+            }
+        </script>
+        
+        <div id="google_plusone">
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone href="http://www.rgraph.net"></g:plusone>
+        </div>
+    
