@@ -1,0 +1,13 @@
+﻿{
+	"log": {
+		"appenders": [
+			{ 
+				"type": "console"
+			}
+		],
+		"replaceConsole": "true",
+		"levels": {
+			"nodeJS": "WARN"
+		}
+	}
+}
