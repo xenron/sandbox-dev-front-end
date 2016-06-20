@@ -1,0 +1,27 @@
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: #222;
+    padding: 8px 38px;
+    margin: 0 10px;
+    border-radius: 4px;
+}
+
+.default {
+    composes: button;
+    background-color: #fff;
+    border: 1px solid #E4E4E4;
+    &:hover {
+        background-color: #F6F6F6;
+    }
+}
+
+.primary {
+    composes: button;
+    color: #fff;
+    background-color: #44b549;
+    &:hover {
+        background-color: #2f9833;
+    }
+}

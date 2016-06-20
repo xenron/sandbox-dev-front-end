@@ -1,0 +1,196 @@
+{
+  "text": "Central Topic",
+  "img_url": "http://mindpin.oss-cn-hangzhou.aliyuncs.com/image_service/images/cuefn8bR/cuefn8bR.jpg",
+  "children": [
+    {
+      "text": "Main Topic",
+      "children": [
+        {
+          "text": "Subtopic",
+          "children": [
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "right"
+            },
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "right"
+            }
+          ],
+          "side": "right"
+        },
+        {
+          "text": "Subtopic",
+          "children": [],
+          "side": "right"
+        }
+      ],
+      "side": "right"
+    },
+    {
+      "text": "Main Topic",
+      "children": [
+        {
+          "text": "Subtopic",
+          "children": [],
+          "side": "left"
+        },
+        {
+          "text": "Subtopic",
+          "children": [
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "left"
+            },
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "left"
+            }
+          ],
+          "side": "left"
+        }
+      ],
+      "side": "left"
+    },
+    {
+      "text": "Main Topic",
+      "children": [
+        {
+          "text": "Subtopic",
+          "children": [],
+          "side": "right"
+        },
+        {
+          "text": "Subtopic",
+          "children": [
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "right"
+            },
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "right"
+            },
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "right"
+            }
+          ],
+          "side": "right"
+        },
+        {
+          "text": "Subtopic",
+          "children": [
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "right"
+            },
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "right"
+            },
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "right"
+            },
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "right"
+            },
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "right"
+            },
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "right"
+            },
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "right"
+            },
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "right"
+            }
+          ],
+          "side": "right"
+        }
+      ],
+      "side": "right"
+    },
+    {
+      "text": "Main Topic",
+      "children": [
+        {
+          "text": "Subtopic",
+          "children": [
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "left"
+            },
+            {
+              "text": "Subtopic",
+              "children": [],
+              "side": "left"
+            }
+          ],
+          "side": "left"
+        }
+      ],
+      "side": "left"
+    },
+    {
+      "text": "Main Topic",
+      "children": [],
+      "side": "right"
+    },
+    {
+      "text": "Main Topic",
+      "children": [],
+      "side": "left"
+    },
+    {
+      "text": "Main Topic",
+      "children": [],
+      "side": "right"
+    },
+    {
+      "text": "Main Topic",
+      "children": [],
+      "side": "left"
+    },
+    {
+      "text": "Main Topic",
+      "children": [],
+      "side": "right"
+    },
+    {
+      "text": "Main Topic",
+      "children": [],
+      "side": "left"
+    },
+    {
+      "text": "Main Topic",
+      "children": [],
+      "side": "right"
+    }
+  ],
+  "is_root": true
+}
