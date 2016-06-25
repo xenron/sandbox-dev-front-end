@@ -1,0 +1,64 @@
+/**
+ * 通用button
+ */
+
+@import "define";
+
+.fui-button {
+
+  ._layout {
+    .fui-label {
+      display: block;
+    }
+    .fui-icon {
+      display: block;
+    }
+  }
+
+  overflow: hidden;
+  cursor: default;
+  font-size: 0;
+
+  .fui-icon {
+
+    display: inline-block;
+    vertical-align: middle;
+
+  }
+
+  .fui-label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  // 布局
+  &.fui-button-layout-top {
+    ._layout;
+  }
+
+  &.fui-button-layout-bottom {
+    ._layout;
+  }
+
+  &:HOVER {
+    background-color: @hoverBgColor;
+    color: @hoverColor;
+  }
+
+  &:ACTIVE {
+    background-color: @activeBgColor;
+    color: @activeColor;
+  }
+
+  &.fui-disabled {
+    &:HOVER {
+      background-color: @bgColor;
+      color: @color;
+    }
+    &:ACTIVE {
+      background-color: @bgColor;
+      color: @color;
+    }
+  }
+
+}

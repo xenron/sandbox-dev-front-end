@@ -1,0 +1,28 @@
+@import "define";
+
+.fui-button-menu {
+
+  border: 1px solid white;
+
+  &:HOVER {
+    border-color: @hoverBgColor;
+  }
+
+  &.fui-button-active {
+    border-color: @hoverBgColor;
+    background: @hoverBgColor;
+
+    .fui-button {
+      background: @hoverBgColor;
+    }
+  }
+
+  &.fui-layout-top, &.fui-layout-bottom {
+    text-align: center;
+  }
+
+  &.fui-layout-top .fui-open-btn, &.fui-layout-bottom .fui-open-btn {
+    display: block;
+  }
+
+}

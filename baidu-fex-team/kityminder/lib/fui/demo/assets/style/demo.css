@@ -1,0 +1,11 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #2b579a;
+}
+
+.bw-toolbar-wrap {
+    border: 1px solid #d3d3d3;
+    background-color: #e1e1e1;
+    border-width: 1px 0;
+}

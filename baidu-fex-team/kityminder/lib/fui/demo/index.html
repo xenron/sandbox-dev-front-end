@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FUI完整demo</title>
+
+    <link rel="stylesheet" type="text/css" href="../dist/theme/default/fui.css">
+    <link rel="stylesheet" type="text/css" href="../theme/word/word.all.css">
+    <link rel="stylesheet" type="text/css" href="assets/style/demo.css">
+    <script src="../dev-lib/jhtmls.min.js"></script>
+    <script src="../dev-lib/jquery-1.11.1.js"></script>
+    <script src="../dev-lib/dev-define.js"></script>
+    <script>
+        inc.config({
+            base: '../src'
+        });
+    </script>
+    <script src="../dev-lib/exports.js"></script>
+    <script src="../dev-lib/dev-start.js"></script>
+    <!--<script src="../dist/fui.all.min.js"></script>-->
+    <script src="conf.js"></script>
+    <script>
+        window.onload = function () {
+
+           var toolbar = FUI.Creator.parse( config );
+
+            toolbar.appendButtonTo( document.getElementById( "tabsButtons" ) );
+            toolbar.appendPanelTo( document.getElementById( "tabsPanels" ) );
+
+        };
+    </script>
+</head>
+<body>
+<h1>FUI 完整demo</h1>
+<div id="wrap" class="bw-toolbar">
+    <div id="tabsButtons" class="tabs-buttons"></div>
+    <div id="tabsPanels" class="tabs-panels"></div>
+</div>
+</body>
+</html>
