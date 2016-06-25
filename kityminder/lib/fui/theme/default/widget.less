@@ -1,0 +1,61 @@
+/**
+ * 所有构件样式规则
+ **/
+
+@import "define";
+
+.mixin-unselect () {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.fui-widget {
+
+  .mixin-unselect();
+  .mixin-text();
+
+  &.fui-selectable {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    -webkit-user-drag: text;
+  }
+
+  outline: none;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  * {
+    .mixin-unselect();
+  }
+
+  &.fui-disabled {
+    .mixin-disabled();
+  }
+
+  &.fui-hide {
+    display: none !important;
+  }
+
+  &.fui-mask-animate {
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+
+  &.fui-mask-hint {
+    -webkit-transform: perspective(600px) translateZ(30px);
+    -moz-transform: perspective(600px) translateZ(30px);
+    transform: perspective(600px) translateZ(30px);
+  }
+
+}

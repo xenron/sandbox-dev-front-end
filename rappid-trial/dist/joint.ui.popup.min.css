@@ -1,0 +1,14 @@
+/*! Rappid v1.7.1 - HTML5 Diagramming Framework - TRIAL VERSION
+
+Copyright (c) 2015 client IO
+
+ 2016-03-03 
+
+
+This Source Code Form is subject to the terms of the Rappid Trial License
+, v. 2.0. If a copy of the Rappid License was not distributed with this
+file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
+ or from the Rappid archive as was distributed by client IO. See the LICENSE file.*/
+
+
+.popup:after,.popup:before{position:absolute;left:50%;margin-left:-10px}.popup{position:absolute;z-index:1000;border:2px solid #007ae6;box-shadow:inset 2px 2px 0 #cbe5fa,2px -2px 0 #cbe5fa,-2px -2px 0 #cbe5fa,inset -2px -2px 0 #cbe5fa,-2px 2px 0 #cbe5fa,2px 2px 0 #cbe5fa,4px 4px 0 #e0e0e0;background-color:#fff}.popup:after,.popup:before{content:' ';height:0;width:0;border:10px solid transparent}.popup:before{border-bottom-color:#fff;top:-18px;z-index:2}.popup:after{border-bottom-color:#007ae6;top:-22px;z-index:1}

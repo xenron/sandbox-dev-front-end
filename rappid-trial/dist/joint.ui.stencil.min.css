@@ -1,0 +1,14 @@
+/*! Rappid v1.7.1 - HTML5 Diagramming Framework - TRIAL VERSION
+
+Copyright (c) 2015 client IO
+
+ 2016-03-03 
+
+
+This Source Code Form is subject to the terms of the Rappid Trial License
+, v. 2.0. If a copy of the Rappid License was not distributed with this
+file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
+ or from the Rappid archive as was distributed by client IO. See the LICENSE file.*/
+
+
+.stencil,.stencil>.content{top:0;bottom:0;left:0;right:0;position:absolute}.stencil .element [magnet],.stencil:after{pointer-events:none}.stencil>.content{overflow-y:auto;overflow-x:hidden;height:auto}.stencil.searchable>.content{top:30px}.stencil .elements{background-color:#fff;height:100%;width:100%}.stencil-paper-drag{position:absolute;z-index:100;width:800;height:800;top:-10000;left:-10000;display:none}.stencil-paper-drag.dragging{display:block;opacity:.7}.stencil .group{overflow:hidden;padding-left:10px;margin-bottom:1px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;transition:max-height .4s linear;max-height:400px}.stencil .group.closed{height:26px;max-height:26px}.stencil .group>.group-label{padding:5px 4px;position:relative;left:-10px;margin-right:-20px;margin-top:0;margin-bottom:0;font-size:10px;font-weight:700;text-transform:uppercase;border-top:1px solid #3a3a3a;border-bottom:2px solid #1f1f1f;background:#242424;cursor:pointer;color:#bcbcbc}.stencil .group>.group-label:before{content:'';width:0;height:0;display:inline-block;margin-left:2px;margin-right:5px;position:relative;top:5px;border-top:5px solid #fff;border-right:5px solid transparent;border-left:5px solid transparent;border-bottom:5px solid transparent}.stencil .group.closed>.group-label:before{top:2px;left:2px;border-top:5px solid transparent;border-bottom:5px solid transparent;border-right:5px solid transparent;border-left:5px solid #fff}.stencil .unmatched{opacity:.3}.stencil .search{width:100%;box-sizing:border-box;text-shadow:0 -1px 0 #000;color:#ddd;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1),0 0 0 1px rgba(255,255,255,.1);border:1px solid #000;background:#333;height:30px;max-height:30px;line-height:30px;z-index:1;position:relative}.stencil:after{display:block;content:'';position:absolute;top:0;width:100%;height:20px;line-height:20px;padding:8px 0;text-align:center;font-size:12px;font-weight:700;background:#242424;color:#bcbcbc;opacity:0;transition:top .1s linear}.stencil.not-found:after{content:'No matches found';top:30px;opacity:1}.stencil .element.unmatched,.stencil .group.unmatched{display:none}

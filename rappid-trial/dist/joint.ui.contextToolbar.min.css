@@ -1,0 +1,14 @@
+/*! Rappid v1.7.1 - HTML5 Diagramming Framework - TRIAL VERSION
+
+Copyright (c) 2015 client IO
+
+ 2016-03-03 
+
+
+This Source Code Form is subject to the terms of the Rappid Trial License
+, v. 2.0. If a copy of the Rappid License was not distributed with this
+file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
+ or from the Rappid archive as was distributed by client IO. See the LICENSE file.*/
+
+
+.context-toolbar{position:absolute;z-index:1000}.context-toolbar .tools{margin-top:-5px;margin-left:-4px;border-radius:20px;border:2px solid #007ae6;box-shadow:inset 2px 2px 0 #cbe5fa,2px -2px 0 #cbe5fa,-2px -2px 0 #cbe5fa,inset -2px -2px 0 #cbe5fa,-2px 2px 0 #cbe5fa,2px 2px 0 #cbe5fa}.context-toolbar .tool{background:#fff;border:none;border-right:2px solid #B2D8F7;min-height:30px;min-width:35px;cursor:pointer;outline:0;vertical-align:middle;margin:0;padding:0}.context-toolbar .tool:last-child{border-right:none;border-top-right-radius:20px;border-bottom-right-radius:20px}.context-toolbar .tool:first-child{border-top-left-radius:20px;border-bottom-left-radius:20px}.context-toolbar .tool:hover{background-color:#B1D7F7}.context-toolbar .tool:active{background-color:#47A2ED}.context-toolbar .tool>img{pointer-events:none}

@@ -1,0 +1,14 @@
+/*! Rappid v1.7.1 - HTML5 Diagramming Framework - TRIAL VERSION
+
+Copyright (c) 2015 client IO
+
+ 2016-03-03 
+
+
+This Source Code Form is subject to the terms of the Rappid Trial License
+, v. 2.0. If a copy of the Rappid License was not distributed with this
+file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
+ or from the Rappid archive as was distributed by client IO. See the LICENSE file.*/
+
+
+.tooltip{position:absolute;z-index:10000;border-radius:5px;background-color:#333;border:2px solid #242424;color:#bcbcbc;pointer-events:none;padding:10px;font-size:14px;text-shadow:0 -1px 0 #000}.tooltip.left,.tooltip.right{margin-top:-2px}.tooltip.bottom,.tooltip.top{margin-left:-2px}.tooltip.small{padding:5px;font-size:10px}.tooltip .tooltip-arrow,.tooltip .tooltip-arrow-mask{border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none}.tooltip.left .tooltip-arrow,.tooltip.left .tooltip-arrow-mask{right:100%}.tooltip.right .tooltip-arrow,.tooltip.right .tooltip-arrow-mask{left:100%}.tooltip.top .tooltip-arrow,.tooltip.top .tooltip-arrow-mask{bottom:100%}.tooltip.bottom .tooltip-arrow,.tooltip.bottom .tooltip-arrow-mask{top:100%}.tooltip .tooltip-arrow-mask{border-width:6px}.tooltip.left .tooltip-arrow-mask{border-right-color:#333;margin-top:-6px}.tooltip.right .tooltip-arrow-mask{border-left-color:#333;margin-top:-6px}.tooltip.top .tooltip-arrow-mask{border-bottom-color:#333;margin-left:-6px}.tooltip.bottom .tooltip-arrow-mask{border-top-color:#333;margin-left:-6px}.tooltip .tooltip-arrow{border-width:8px}.tooltip.left .tooltip-arrow{border-right-color:#242424;margin-top:-8px}.tooltip.right .tooltip-arrow{border-left-color:#242424;margin-top:-8px}.tooltip.top .tooltip-arrow{border-bottom-color:#242424;margin-left:-8px}.tooltip.bottom .tooltip-arrow{border-top-color:#242424;margin-left:-8px}

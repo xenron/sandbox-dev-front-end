@@ -1,0 +1,14 @@
+/*! Rappid v1.7.1 - HTML5 Diagramming Framework - TRIAL VERSION
+
+Copyright (c) 2015 client IO
+
+ 2016-03-03 
+
+
+This Source Code Form is subject to the terms of the Rappid Trial License
+, v. 2.0. If a copy of the Rappid License was not distributed with this
+file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
+ or from the Rappid archive as was distributed by client IO. See the LICENSE file.*/
+
+
+.dialog .titlebar.empty,.dialog.inlined .bg,.dialog:not(.modal) .bg{display:none}.dialog{font-family:"Helvetica Neue",Helvetica,Helvetica,Arial,sans-serif!important}.dialog .bg{position:fixed;top:0;left:0;right:0;bottom:0;background-color:#000;opacity:.5;z-index:10000}.dialog .fg{width:80%;margin:0 auto;top:100px;left:0;right:0;z-index:10001;position:absolute;border-radius:5px;background-color:#fff;border:1px solid #ccc;box-shadow:0 0 10px rgba(0,0,0,.4)}.dialog:not(.modal) .fg{z-index:9999}.dialog.inlined .fg{position:relative;top:auto;left:auto;margin:0;z-index:auto}.dialog .titlebar{background-color:#7c68fc;padding:10px;color:#fff;text-shadow:0 0 1px #000;text-rendering:optimizeLegibility;border-top-right-radius:5px;border-top-left-radius:5px;border-bottom:2px solid #dcddee}.dialog[data-type=alert] .titlebar{background-color:#fe854f}.dialog[data-type=warning] .titlebar{background-color:#feb663}.dialog[data-type=success] .titlebar{background-color:#31d0c6}.dialog[data-type=neutral] .titlebar{background-color:#efefef;color:#696c8a;text-shadow:none}.dialog.draggable .titlebar{cursor:move;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.dialog .btn-close{background-color:transparent;border:none;font-size:16px;font-family:Arial;line-height:1;position:absolute;top:5px;right:5px;color:#3c4260;cursor:pointer;text-shadow:0 0 1px #fff}.dialog .body{padding:10px}.dialog .controls .control-button{float:right;line-height:30px;border:1px solid #6A6C8B;color:#6A6C8B;background-color:transparent;border-radius:15px;height:30px;padding:0 15px;font-size:10pt;font-family:Helvetica Neue;cursor:pointer;outline:0;margin:20px 5px 10px}.dialog .controls .control-button.left{float:left;margin-left:10px;margin-right:5px}.dialog .controls .control-button:hover{background-color:#6A6C8B;color:#fff}

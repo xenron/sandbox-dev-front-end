@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FUI</title>
+
+    <link rel="stylesheet" type="text/css" href="../theme/default/fui.all.css">
+
+    <style>
+        .test1 {
+            background: red;
+        }
+        .test2 {
+            background: blue;
+        }
+        .test3 {
+            background: green;
+        }
+        .test4 {
+            background: cyan;
+        }
+        .test5 {
+            background: #000;
+            opacity: 0.3;
+        }
+        body>button {
+            margin: 100px;
+        }
+        body>.div {
+            border: 5px solid #c3c3c3;
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            margin: 100px;
+        }
+    </style>
+
+    <script src="../dev-lib/jhtmls.min.js"></script>
+    <script src="../dev-lib/jquery-1.11.1.js"></script>
+    <script src="../dev-lib/dev-define.js"></script>
+    <script>
+        inc.config({
+            base: '../src'
+        });
+    </script>
+    <script src="../dev-lib/exports.js"></script>
+    <script src="../dev-lib/dev-start.js"></script>
+    <script>
+        window.onload = function () {
+
+            var panels = FUI.Creator.parse( [ {
+                clazz: 'PPanel',
+                width: 50,
+                height: 50,
+                className: 'test1',
+                layout: 'left'
+            }, {
+                clazz: 'PPanel',
+                width: 50,
+                height: 50,
+                className: 'test2',
+                layout: 'top'
+            }, {
+                clazz: 'PPanel',
+                width: 50,
+                height: 50,
+                className: 'test3',
+                layout: 'right'
+            }, {
+                clazz: 'PPanel',
+                width: 50,
+                height: 50,
+                className: 'test4',
+                layout: 'bottom'
+            }, {
+                clazz: 'PPanel',
+                width: 50,
+                height: 50,
+                className: 'test5',
+                resize: 'none',
+                layout: 'left-top'
+            }, {
+                clazz: 'PPanel',
+                width: 50,
+                height: 50,
+                className: 'test5',
+                resize: 'none',
+                layout: 'left-bottom'
+            }, {
+                clazz: 'PPanel',
+                width: 50,
+                height: 50,
+                className: 'test5',
+                resize: 'none',
+                layout: 'right-top'
+            }, {
+                clazz: 'PPanel',
+                width: 50,
+                height: 50,
+                className: 'test5',
+                resize: 'none',
+                layout: 'right-bottom'
+            } ] );
+
+            panels[ 0 ].positionTo( document.getElementById( "test1" ) )
+            panels[ 0 ].show();
+
+            panels[ 1 ].positionTo( document.getElementById( "test2" ) )
+            panels[ 1 ].show();
+
+            panels[ 2 ].positionTo( document.getElementById( "test3" ) )
+            panels[ 2 ].show();
+
+            panels[ 3 ].positionTo( document.getElementById( "test4" ) )
+            panels[ 3 ].show();
+
+            panels[ 4 ].positionTo( document.getElementById( "div1" ) )
+            panels[ 4 ].show();
+
+            panels[ 5 ].positionTo( document.getElementById( "div2" ) )
+            panels[ 5 ].show();
+
+            panels[ 6 ].positionTo( document.getElementById( "div3" ) )
+            panels[ 6 ].show();
+
+            panels[ 7 ].positionTo( document.getElementById( "div4" ) )
+            panels[ 7 ].show();
+
+        };
+
+    </script>
+</head>
+<body>
+    <h1>Positioning Panel 示例</h1>
+    <button id="test1">left</button>
+    <button id="test2">top</button>
+    <button id="test3">right</button>
+    <button id="test4">bottom</button>
+    <div id="div1" class="div">left-top</div>
+    <div id="div2" class="div">left-bottom</div>
+    <div id="div3" class="div">right-top</div>
+    <div id="div4" class="div">right-bottom</div>
+</body>
+</html>
