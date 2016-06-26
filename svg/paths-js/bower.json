@@ -1,0 +1,12 @@
+{
+	"name": "paths-js",
+	"version": "0.4.4",
+	"main": "dist/amd",
+	"ignore": [
+		".gitignore",
+		"node_modules",
+		"package.json"
+	],
+	"dependencies": {},
+	"devDependencies": {}
+}
